@@ -1,0 +1,13 @@
+﻿<Window x:Class="ADler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:ADler.ViewModel"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel></viewModel:MainWindowViewModel>
+    </Window.DataContext>
+
+    <Grid>
+        
+    </Grid>
+</Window>
