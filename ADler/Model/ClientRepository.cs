@@ -24,9 +24,9 @@ namespace ADler.Model
         private static ObservableCollection<Client> GenerateClientRepository()
         {
             ObservableCollection<Client> clients = new ObservableCollection<Client>();
-            clients.Add(new Client("Jhon", "Doe"));
-            clients.Add(new Client("Tom", "Ronald"));
-            clients.Add(new Client("Jane", "Roe"));
+            clients.Add(new Client("10", "20"));
+            clients.Add(new Client("50", "50"));
+            clients.Add(new Client("20", "20"));
             return clients;
         }
     }

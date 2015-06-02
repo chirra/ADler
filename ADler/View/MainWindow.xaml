@@ -2,12 +2,36 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModel="clr-namespace:ADler.ViewModel"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
         <viewModel:MainWindowViewModel></viewModel:MainWindowViewModel>
     </Window.DataContext>
 
     <Grid>
-        
+        <!--<viewModel:DrawingCanvas x:Name="drawingSurface"> -->
+        <Canvas>
+            <Button Canvas.Left="47" Canvas.Top="45">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Rectangle Fill="Violet" Stroke="Turquoise" Width="100" Height="100"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Rectangle Fill="Yellow" Stroke="Wheat" Width="200" Height="200" Canvas.Left="{Binding Path=Clients[0].X}" Canvas.Top="{Binding Path=Clients[0].Y}" Name="rect" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDown" >
+                        <i:InvokeCommandAction Command="{Binding MouseDown}" CommandParameter="{Binding ElementName=rect}" />
+                            
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Rectangle>
+        </Canvas>
+
+        <!--</viewModel:DrawingCanvas>-->
+
+
     </Grid>
 </Window>

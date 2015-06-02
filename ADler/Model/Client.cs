@@ -8,6 +8,9 @@ namespace ADler.Model
 {
     public class Client
     {
+        public string X { get; set; }
+        public string Y { get; set; }
+    
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
@@ -15,10 +18,10 @@ namespace ADler.Model
         {
         }
 
-        public Client(string firstName, string lastName)
+        public Client(string x, string y)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            X = x;
+            Y = y;
         }
 
         public override string ToString()
